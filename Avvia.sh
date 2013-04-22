@@ -34,4 +34,5 @@ wait
 ./DropIP.sh IP.txt
 wait
 
-iptables -L
+## Attiva per il Debug
+##iptables -L
