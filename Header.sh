@@ -16,7 +16,7 @@ printf .
 iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
 wait
 printf .
-iptables -A INPIT -p tcp --tcp-flags ALL NONE -j DROP
+iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
 wait
 printf .
 # la seguente sequenza svolge un throttling a 60 secondi
@@ -35,7 +35,7 @@ printf .
 # limita sulla 80
 iptables -A INPUT -p tcp --dport 80 -i eth0 -m state --state NEW -m recent --set
 wait
-ptintf .
+printf .
 iptables -A INPUT -p tcp --dport 80 -i eth0 -m state --state NEW -m recent --update --seconds 60 --hitcount 6 -j DROP
 wait
 printf .
