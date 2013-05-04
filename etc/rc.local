@@ -15,6 +15,6 @@ test -e /etc/ssh/ssh_host_dsa_key || dpkg-reconfigure openssh-server
 
 ( /root/riavviaApache.sh & ) &
 
-. /root/Firewall/rc.local &
+( /root/aggiornaFirewall.sh & ) &
 
 exit 0
