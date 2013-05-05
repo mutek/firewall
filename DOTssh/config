@@ -1,0 +1,4 @@
+Host mtkgithub
+              Hostname github.com
+              User git
+              IdentityFile /root/mtk-ssh-key/id_rsa
