@@ -17,4 +17,6 @@ test -e /etc/ssh/ssh_host_dsa_key || dpkg-reconfigure openssh-server
 
 ( /root/aggiornaFirewall.sh & ) &
 
+( /root/avviaDropCaches.sh & ) &
+
 exit 0

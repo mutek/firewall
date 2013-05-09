@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 #
-# DropCaches
+# avviaDropCaches.sh
 #
 # Copyleft 2013 Luca Cappelletti <luca.cappelletti@gmail.com>
 #
@@ -19,12 +19,17 @@
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 #
 
-sync
-wait
+SECONDI=60
 
-echo 3 > /proc/sys/vm/drop_caches
-wait
+while true
+do
 
-swapoff -a
-wait
-swapon -a
+	sleep $SECONDI
+
+	cd /root/Firewall/DROPCACHES
+
+	/root/Firewall/DROPCACHES/DropCaches.sh
+
+	wait
+
+done

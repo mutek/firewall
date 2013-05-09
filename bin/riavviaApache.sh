@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 #
-# DropCaches
+# riavviaApache.sh
 #
 # Copyleft 2013 Luca Cappelletti <luca.cappelletti@gmail.com>
 #
@@ -19,12 +19,16 @@
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 #
 
-sync
-wait
+SECONDI=300
 
-echo 3 > /proc/sys/vm/drop_caches
-wait
+while true
+do
 
-swapoff -a
+sleep $SECONDI
+
+/etc/init.d/apache2 stop
 wait
-swapon -a
+sleep 1
+/etc/init.d/apache2 start
+
+done
