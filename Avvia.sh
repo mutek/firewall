@@ -28,7 +28,7 @@ wait
 iptables -F
 wait
 
-iptabels -X
+iptables -X
 wait
 
 ./Header.sh
