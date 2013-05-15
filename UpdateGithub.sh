@@ -7,7 +7,7 @@
 #
 
 git config --global user.name "Luther Blissett"
-git config --global user.email luther.blissett@www.localhost.localdomain
+git config --global user.email luther.blissett@crimson
 
 echo "Aggiungo i cambiamenti al database locale"
 git add .
