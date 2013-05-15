@@ -44,3 +44,19 @@ printf .
 iptables -A INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above 20 -j REJECT --reject-with tcp-reset
 wait
 printf .
+
+
+## CRIMSON HEADERS
+iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j DROP 
+wait
+printf .
+iptables -A INPUT -p tcp -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -m state --state NEW -j DROP 
+wait
+printf .
+iptables -A INPUT -f -j DROP 
+wait
+printf .
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG FIN,SYN,RST,PSH,ACK,URG -j DROP 
+wait
+printf .
+iptables -A INPUT -p tcp -m tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP

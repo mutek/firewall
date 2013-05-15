@@ -22,10 +22,13 @@ wait
 ./BREAK.sh >> IP.tmp
 wait
 
-cat IP.tmp | sort -gu > IP.txt
+cat IP.tmp | sort -u | sort -n > IP.txt
 wait
 
 iptables -F
+wait
+
+iptabels -X
 wait
 
 ./Header.sh
