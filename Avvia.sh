@@ -35,7 +35,7 @@ wait
 for i in $(ls *.other)
 do
 
-	cat IP.$i >> IP.tmp
+	cat $i >> IP.tmp
 	wait
 
 done
