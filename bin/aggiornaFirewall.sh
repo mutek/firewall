@@ -18,7 +18,7 @@
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 #
 
-SECONDI=120
+SECONDI=300
 
 while true
 do
