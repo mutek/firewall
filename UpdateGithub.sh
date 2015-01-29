@@ -23,6 +23,7 @@
 git config --global user.name "Luther Blissett"
 git config --global user.email luther.blissett@$(hostname)
 
+git pull
 echo "Aggiungo i cambiamenti al database locale"
 git add .
 echo "Inserisci una descrizione dei tuoi cambiamenti"
