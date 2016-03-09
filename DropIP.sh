@@ -13,18 +13,18 @@ IP_LIST=$1
 
 [ ! -f $IP_LIST ] && echo "Non è un file" && exit 1
 
-for IP in $(cat $IP_LIST)
+for IP in $(cat $IP_LIST | awk '/^#/ { next; } { print $0 }')
 do
 
-	#echo "valuto: "$IP
+#	echo "valuto: "$IP
 
 	iptables -A INPUT -s $IP -j DROP
 
 	wait
 
-	printf .
+#	printf .
 
 done
 
-echo ""
+#echo ""
 
