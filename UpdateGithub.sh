@@ -3,7 +3,7 @@
 # UpdateGithub.sh
 #
 #
-# Copyleft 2013 Luca Cappelletti <luca.cappelletti@gmail.com>
+# Copyleft 2013-2015 Luca Cappelletti <luca.cappelletti@gmail.com>
 #
 #            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 #                    Version 2, December 2004
@@ -23,6 +23,7 @@
 git config --global user.name "Luther Blissett"
 git config --global user.email luther.blissett@$(hostname)
 
+git pull
 echo "Aggiungo i cambiamenti al database locale"
 git add .
 echo "Inserisci una descrizione dei tuoi cambiamenti"
